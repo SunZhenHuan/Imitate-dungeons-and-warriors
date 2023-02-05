@@ -1,0 +1,64 @@
+JDK默认安装在C盘  也可以指定安装路径 
+	
+	jdk和jre建议装在同一目录下
+
+JDK安装成功测试 
+
+	开始-->运行--〉CMD 或者 快捷键  win + r  -> cmd
+
+	键盘输入：java -version 
+		
+
+JDK环境变量配置的步骤如下：
+
+1.在桌面右键我的电脑-->属性-->高级-->环境变量
+
+2.配置系统变量:
+　　　　　　　　a.新建 JAVA_HOME
+　　　　　　　　　　   C:\Program Files\Java\jdk1.8.0_161 （JDK的安装路径）  依照自己的版本
+　　　　　　　　b.新建 CLASSPATH
+　　　　　　　　　　　 .;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar 
+				c.在PATH里新加入
+　　　　　　　　　　　  %JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;
+
+3.测试环境变量配置是否成功：
+　　
+     开始-->运行--〉CMD
+          javac
+          java	
+	会显示一堆命令提示  代表配置ok
+
+4、运行我的第一个Java源文件
+   W7系统
+	1、显示文件的扩展名 步骤如下
+		打开我的电脑 -〉组织 -〉文件夹和搜索选项 -〉查看 -〉取消勾选隐藏已知文件类型的扩展名
+	2、新建文本文档
+	3、重命名为HelloWorld.java                           	
+      
+在D盘下新建 HelloWorld.java文件   
+
+里面代码如下
+
+public  class HelloWorld{
+
+	public static  void main (String[] args){
+
+		System.out.println("Hello World");
+	}
+
+}
+ 
+　　　键盘敲入：
+		D:   切换盘符
+		javac HelloWorld.java	 编译
+		java  HelloWorld	 执行		 
+		
+		Hello World
+ 
+　　　　　　　　出现相应的命令，而不是出错信息，即表示配置成功！
+
+ 
+环境变量配置的理解：
+　　1. PATH环境变量。作用是指定命令搜索路径，在i命令行下面执行命令如javac编译java程序时，它会到PATH变量所指定的路径中查找看是否能找到相应的命令程序。我们需要把jdk安装目录下的bin目录增加到现有的PATH变量中，bin目录中包含经常要用到的可执行文件如javac/java/javadoc等待，设置好PATH变量后，就可以在任何目录下执行javac/java等工具了。
+　　2. CLASSPATH环境变量。作用是指定类搜索路径，要使用已经编写好的类，前提当然是能够找到它们了，JVM就是通过CLASSPTH来寻找类的。我们需要把jdk安装目录下的lib子目录中的dt.jar和tools.jar设置到CLASSPATH中，当然，当前目录“.”也必须加入到该变量中。
+　　3. JAVA_HOME环境变量。它指向jdk的安装目录，Eclipse/NetBeans/Tomcat等软件就是通过搜索JAVA_HOME变量来找到并使用安装好的jdk。

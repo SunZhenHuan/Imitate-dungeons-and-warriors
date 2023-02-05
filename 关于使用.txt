@@ -1,0 +1,6 @@
+准备mysql,
+有图形化的mysql更好,
+然后新建数据库game,
+右击game然后导入mysql_tab文件夹的sql文件
+用源码打开请用idea软件并且导入数据库的依赖"\out\production\untitled\mysql-connector-java-8.0.25.jar"这个
+然后修改src/com下面的GetMessage.java文件里面的数据库用户名和密码就可以使用了
